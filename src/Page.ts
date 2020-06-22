@@ -2,7 +2,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import Axios, { AxiosResponse, AxiosError } from "axios";
 
-export interface IRegion {
+export interface ICustomer {
     id: number;
     name: string;
 }
@@ -11,12 +11,12 @@ export interface IRegion {
     template: require("./Page.html")
 })
 export default class Page extends Vue {
-    public regions: IRegion[] = [];
+    public customers: ICustomer[] = [];
 
     mounted(): void {
-        Axios.get("http://my-json-server.typicode.com/pereborec87/fakeJSON/regions")
+        Axios.get("http://my-json-server.typicode.com/pereborec87/fakeJSON/customers")
         .then((response: AxiosResponse) => {
-            this.regions = response.data;
+            this.customers = response.data;
         })
         .catch((error: AxiosError) => {
             console.error("Ошибка получения данных");

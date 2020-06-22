@@ -1,4 +1,5 @@
-[
+{
+  "customers": [
   {
     "id": "5ef0eb150d000dc0f20f99f8",
     "name": "Ortega Silva",
@@ -4714,3 +4715,4 @@
     ]
   }
 ]
+}
