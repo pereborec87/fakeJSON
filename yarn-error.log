@@ -1,0 +1,48 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\nikonenko\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\nikonenko\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Microsoft VS Code\bin;C:\Users\nikonenko\AppData\Roaming\npm;C:\Users\nikonenko\AppData\Local\Yarn\bin;C:\adb;C:\Program Files\TortoiseHg\;C:\Program Files\nodejs\;C:\Program Files\TortoiseGit\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\GitExtensions\;c:\maven\bin\;C:\Users\pereborec87\AppData\Local\Microsoft\WindowsApps;C:\Users\pereborec87\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\pereborec87\AppData\Local\GitHubDesktop\bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  10.15.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: c:\fakeJSON\package.json: Unexpected token } in JSON at position 544
+      at JSON.parse (<anonymous>)
+      at C:\Users\nikonenko\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\nikonenko\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\nikonenko\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "@krista-bi/console",
+    "version": "1.0.0",
+    "main": "lib/index.js",
+    "private": true,
+    "scripts": {
+      "build": "gulp clean && gulp lint && cross-env NODE_ENV=production webpack --config webpack.config.js",
+      "build:dev": "gulp clean && gulp lint && webpack --config webpack.config.js --progress",
+      "build:watch": "cross-env NODE_ENV=watch webpack --config webpack.config.js",
+      "dist": "gulp dist"
+    },
+    "dependencies": {
+      "axios": "^0.19.0",
+      "vue": "2.5.13",
+      "vue-router": "3.0.1",
+      "vuex": "^3.0.1",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
