@@ -1,0 +1,16 @@
+{
+	"regions": [
+		{
+			"id": "1",
+			"name": "YAR"
+		},
+		{
+			"id": "2",
+			"name": "TVER"
+		},
+		{
+			"id": "3",
+			"name": "MOS"
+		}
+	]
+}
