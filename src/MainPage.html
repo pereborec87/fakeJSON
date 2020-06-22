@@ -1,15 +1,17 @@
 <div class="main-page-container">
-    <div class="source-elements elements">
+    <div class="elements">
         <div>
             <input/>
         </div>
-        <div v-for="sourceItem in sourceItems" class="element-row">
-            <div>{{sourceItem.name}}</div>
-            <div>{{sourceItem.id}}</div>
-            <button @click="onAddElement(sourceItem)">+</button>
+        <div class="source-elements">
+            <div v-for="sourceItem in sourceItems" class="element-row">
+                <div>{{sourceItem.name}}</div>
+                <div>{{sourceItem.id}}</div>
+                <button @click="onAddElement(sourceItem)">+</button>
+            </div>
         </div>
     </div>
-    <div class="target-elements elements">
+    <div class="elements target-elements">
         <div v-for="targetItem in targetItems" class="element-row">
             <div>{{targetItem.name}}</div>
             <div>{{targetItem.id}}</div>

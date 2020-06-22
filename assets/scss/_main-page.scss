@@ -1,6 +1,7 @@
 .main-page-container {
     flex: 1;
     display: flex;
+    overflow-y: auto;
 
     .elements {
         flex: 1;
@@ -8,6 +9,7 @@
         padding: 4px;
         display: flex;
         flex-direction: column;
+        overflow-y: auto;
 
         .element-row {
             display: flex;
@@ -17,5 +19,12 @@
                 flex: 1;
             }
         }
+
+        .source-elements {
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        
     }
 }

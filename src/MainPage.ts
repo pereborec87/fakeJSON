@@ -16,13 +16,13 @@ export default class MainPage extends Vue {
     public targetItems: IElement[] = [];
 
     mounted(): void {
-        const PUBLIC_API_URI = "http://my-json-server.typicode.com/pereborec87/fakeJSON/customers";
+        const PUBLIC_API_URI = "https://api.jsonbin.io/b/5ef1285197cb753b4d15df1f/3";
         Axios.get(PUBLIC_API_URI)
             .then((response: AxiosResponse) => {
                 this.sourceItems = response.data;
             })
             .catch((error: AxiosError) => {
-                console.error("Ошибка получения данных");
+                console.error("Ошибка получения данных.");
             });
     }
 

@@ -3,6 +3,7 @@
 
 html, body {
     height: 100%;
+    margin: 0;
 }
 
 .navigator-container {
@@ -12,10 +13,12 @@ html, body {
 
     .navigator-header {
         font-size: 24px;
+        padding: 4px;
     }
 
     .navigator-navigation {
         display: flex;
+        padding: 4px;
 
         .navigation-item {
             font-size: 20px;

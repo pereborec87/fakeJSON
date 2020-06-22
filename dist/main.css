@@ -5,30 +5,38 @@
 
 .main-page-container {
   flex: 1;
-  display: flex; }
+  display: flex;
+  overflow-y: auto; }
   .main-page-container .elements {
     flex: 1;
     border: 1px solid gray;
     padding: 4px;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    overflow-y: auto; }
     .main-page-container .elements .element-row {
       display: flex;
       padding: 4px; }
       .main-page-container .elements .element-row div {
         flex: 1; }
+    .main-page-container .elements .source-elements {
+      overflow-y: auto;
+      flex: 1; }
 
 html, body {
-  height: 100%; }
+  height: 100%;
+  margin: 0; }
 
 .navigator-container {
   height: 100%;
   display: flex;
   flex-direction: column; }
   .navigator-container .navigator-header {
-    font-size: 24px; }
+    font-size: 24px;
+    padding: 4px; }
   .navigator-container .navigator-navigation {
-    display: flex; }
+    display: flex;
+    padding: 4px; }
     .navigator-container .navigator-navigation .navigation-item {
       font-size: 20px;
       padding: 4px; }
