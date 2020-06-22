@@ -1,4 +1,12 @@
-<div>
-    TEST PAGE!!!
-    <div v-for="customer in customers">{{region.name}}{{region.id}}</div>
+<div class="bi-app-container">
+    <div class="main-page-header">
+        Тестовое задание Bell Integrator
+    </div>
+    <div class="main-page-navigation">
+        <router-link to="/main">Главная</router-link>
+        <router-link :to="{name: 'history', params: { action: 'all' } }">История</router-link>
+        <router-link :to="{name: 'history', params: { action: 'add' } }">История добавлений</router-link>
+        <router-link :to="{name: 'history', params: { action: 'remove' } }">История удалений</router-link>
+    </div>
+    <router-view></router-view>
 </div>

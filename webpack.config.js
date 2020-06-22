@@ -10,6 +10,10 @@ module.exports =  {
         modules: true,
         reasons: true
     },
+    watch: true,
+    watchOptions: {
+        aggregateTimeout: 100
+    },
     entry: {
         main: "./src/index.ts"
     },

@@ -1,0 +1,15 @@
+<div class="main-page-container">
+    <div class="source-elements">
+        <input/>
+        <div v-for="sourceItem in sourceItems">
+            <span>{{sourceItem.name}} {{sourceItem.id}}</span>
+            <button @click="onAddElement(sourceItem)">+</button>
+        </div>
+    </div>
+    <div class="target-elements">
+        <div v-for="targetItem in targetItems">
+            <span>{{targetItem.name}} {{targetItem.id}}</span>
+            <button @click="onRemoveElement(targetItem)">-</button>
+        </div>
+    </div>
+</div>
