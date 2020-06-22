@@ -4,7 +4,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "composite": true,
-    "outDir": "lib",
+    "outDir": "dist",
     "rootDir": "src",
     "removeComments": true,
     "noImplicitUseStrict": true,
@@ -21,7 +21,7 @@
   },
   "include": [ "src" ],
   "exclude": [
-    "lib",
+    "dist",
     "node_modules"
   ],
 }

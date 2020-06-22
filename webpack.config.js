@@ -4,12 +4,6 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports =  {
     mode: "development",
-    stats: {
-        errorDetails: true,
-        colors: true,
-        modules: true,
-        reasons: true
-    },
     watch: true,
     watchOptions: {
         aggregateTimeout: 100
@@ -18,7 +12,7 @@ module.exports =  {
         main: "./src/index.ts"
     },
     output: {
-        path: path.join(__dirname, "lib"),
+        path: path.join(__dirname, "dist"),
         filename: '[name].js'
     },
     resolve: {
@@ -36,7 +30,6 @@ module.exports =  {
                 'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
             }
         }),
-        new webpack.NamedModulesPlugin(),
         new VueLoaderPlugin()
     ],
     module: {
@@ -62,12 +55,6 @@ module.exports =  {
             options: {
                 esModule: true
             }
-        }, {
-            test: /\.s[a|c]ss$/,
-            loader: 'style-loader!css-loader!sass-loader'
-        }, {
-            test: /\.styl$/,
-            loader: 'style-loader!css-loader!stylus-loader'
         }]
     }
 };

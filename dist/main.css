@@ -3,29 +3,32 @@
   .history-page .history-action-row div {
     flex: 1; }
 
+.main-page-container {
+  flex: 1;
+  display: flex; }
+  .main-page-container .elements {
+    flex: 1;
+    border: 1px solid gray;
+    padding: 4px;
+    display: flex;
+    flex-direction: column; }
+    .main-page-container .elements .element-row {
+      display: flex;
+      padding: 4px; }
+      .main-page-container .elements .element-row div {
+        flex: 1; }
+
 html, body {
   height: 100%; }
 
-.bi-app-container {
+.navigator-container {
   height: 100%;
   display: flex;
   flex-direction: column; }
-  .bi-app-container .main-page-header {
+  .navigator-container .navigator-header {
     font-size: 24px; }
-  .bi-app-container .main-page-navigation {
+  .navigator-container .navigator-navigation {
     display: flex; }
-    .bi-app-container .main-page-navigation .navigation-item {
+    .navigator-container .navigator-navigation .navigation-item {
       font-size: 20px;
-      padding: 4px; }
-  .bi-app-container .main-page-container {
-    flex: 1;
-    display: flex;
-    font-size: 24px; }
-    .bi-app-container .main-page-container .source-elements {
-      flex: 1;
-      border: 1px solid gray;
-      padding: 4px; }
-    .bi-app-container .main-page-container .target-elements {
-      flex: 1;
-      border: 1px solid gray;
       padding: 4px; }

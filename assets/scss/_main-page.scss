@@ -1,0 +1,21 @@
+.main-page-container {
+    flex: 1;
+    display: flex;
+
+    .elements {
+        flex: 1;
+        border: 1px solid gray;
+        padding: 4px;
+        display: flex;
+        flex-direction: column;
+
+        .element-row {
+            display: flex;
+            padding: 4px;
+
+            div {
+                flex: 1;
+            }
+        }
+    }
+}

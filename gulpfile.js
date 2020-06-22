@@ -1,13 +1,7 @@
 const gulp = require('gulp');
-var clean = require('gulp-clean');
 const pump = require('pump');
 const flatten = require('gulp-flatten');
 const sass = require('gulp-sass');
-
-gulp.task('clean', function () {
-    return gulp.src('./dist', {read: false})
-        .pipe(clean());
-});
 
 gulp.task('scss', [], (callback) => {
     pump([
