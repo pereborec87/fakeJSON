@@ -1,12 +1,10 @@
 import Component from "vue-class-component";
 import Vue from "vue";
 import Axios, { AxiosResponse, AxiosError } from "axios";
-import { IHistoryAction } from ".";
+import { IElement, IHistoryAction } from "../decalrations/Interfaces";
+import { ActionTypes } from "../decalrations/enums";
 
-export interface IElement {
-    id: string;
-    name: string;
-}
+
 
 @Component({
     template: require("./MainPage.html")
@@ -37,7 +35,7 @@ export default class MainPage extends Vue {
         this.$store.commit("addHistoryAction", <IHistoryAction>{
             name: el.name,
             id: el.id,
-            actionType: "add",
+            actionType: ActionTypes.Add,
             time: (new Date()).toISOString()
         });
     }
@@ -53,7 +51,7 @@ export default class MainPage extends Vue {
         this.$store.commit("addHistoryAction", <IHistoryAction>{
             name: el.name,
             id: el.id,
-            actionType: "remove",
+            actionType: ActionTypes.Remove,
             time: (new Date()).toISOString()
         });
     }

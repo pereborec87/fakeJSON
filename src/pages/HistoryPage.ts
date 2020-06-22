@@ -2,7 +2,8 @@ import Component from "vue-class-component";
 import Vue from "vue";
 import { Prop } from "vue-property-decorator";
 import { Route } from "vue-router";
-import { IHistoryAction, IState } from ".";
+import { IHistoryAction, IState } from "../decalrations/Interfaces";
+import { ActionTypes } from "../decalrations/enums";
 
 @Component({
     template: require("./HistoryPage.html")
@@ -30,18 +31,18 @@ export default class HistoryPage extends Vue {
     private applyActionType(actionType: string): void {
             this.actions = (<IState>this.$store.state).actions;
             switch (actionType) {
-                case "all": {
+                case ActionTypes.All: {
                     break;
                 }
-                case "add": {
+                case ActionTypes.Add: {
                     this.actions = this.actions.filter((action: IHistoryAction) => {
-                        return action.actionType === "add";
+                        return action.actionType === ActionTypes.Add;
                     });
                     break;
                 }
-                case "remove": {
+                case ActionTypes.Remove: {
                     this.actions = this.actions.filter((action: IHistoryAction) => {
-                        return action.actionType === "remove";
+                        return action.actionType === ActionTypes.Remove;
                     });
                     break;
                 }

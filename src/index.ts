@@ -2,23 +2,13 @@ import Vue from "vue";
 import Vuex from "vuex";
 import VueRouter from "vue-router";
 import Navigator from "./Navigator";
-import MainPage from "./MainPage";
-import HistoryPage from "./HistoryPage";
-import ListElement from "./ListElement";
+import MainPage from "./pages/MainPage";
+import HistoryPage from "./pages/HistoryPage";
+import ListElement from "./components/ListElement";
+import { IHistoryAction, IState } from "./decalrations/Interfaces";
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
-
-export interface IHistoryAction {
-    name: string;
-    id: string;
-    time: string;
-    actionType: string;
-}
-
-export interface IState {
-    actions: IHistoryAction[];
-}
 
 function createVueInstance(): void {
     let routes = [{
