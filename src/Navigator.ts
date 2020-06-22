@@ -1,10 +1,9 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
-
 @Component({
-    template: require("./Page.html")
+    template: require("./Navigator.html")
 })
-export default class Page extends Vue {
+export default class Navigator extends Vue {
     
 }

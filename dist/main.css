@@ -1,3 +1,8 @@
+.history-page .history-action-row {
+  display: flex; }
+  .history-page .history-action-row div {
+    flex: 1; }
+
 html, body {
   height: 100%; }
 
@@ -7,6 +12,11 @@ html, body {
   flex-direction: column; }
   .bi-app-container .main-page-header {
     font-size: 24px; }
+  .bi-app-container .main-page-navigation {
+    display: flex; }
+    .bi-app-container .main-page-navigation .navigation-item {
+      font-size: 20px;
+      padding: 4px; }
   .bi-app-container .main-page-container {
     flex: 1;
     display: flex;

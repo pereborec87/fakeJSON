@@ -1,21 +1,37 @@
 import Vue from "vue";
+import Vuex from "vuex";
 import VueRouter from "vue-router";
-import Page from "./Page";
-import Main from "./Main";
-import History from "./History";
+import Navigator from "./Navigator";
+import MainPage from "./MainPage";
+import HistoryPage from "./HistoryPage";
+import ListElement from "./ListElement";
 
 Vue.use(VueRouter);
-// Vue.use(Vuex);
+Vue.use(Vuex);
+
+export interface IHistoryAction {
+    name: string;
+    id: string;
+    time: string;
+    actionType: string;
+}
+
+export interface IState {
+    actions: IHistoryAction[];
+}
 
 function createVueInstance(): void {
     let routes = [{
+        path: '/',
+        redirect: { name: 'main' }
+    }, {
         path: '/main',
         name: 'main',
-        component: Main
+        component: MainPage
     }, {
         path: '/history/:action',
         name: 'history',
-        component: History,
+        component: HistoryPage,
         props: true
     }]
     // Создаю роутер
@@ -23,12 +39,12 @@ function createVueInstance(): void {
         routes
     });
     // Создаю store для хранения состояния
-    //var store = new Vuex.Store(storeOptions);
+    var store = new Vuex.Store(storeOptions);
     // Создаю экземпляр Vue
     new Vue({
         el: "#app",
         router,
-        // store,
+        store,
         render: (createElement) => {
             return createElement("page");
         }
@@ -36,9 +52,21 @@ function createVueInstance(): void {
 }
 
 function registerVueComponents(): void {
-    Vue.component("main", Main);
-    Vue.component("page", Page);
-    Vue.component("history", History);
+    Vue.component("main", MainPage);
+    Vue.component("page", Navigator);
+    Vue.component("history", HistoryPage);
+    Vue.component("list-element", ListElement);
+}
+
+const storeOptions = {
+    state: {
+        actions: []
+    },
+    mutations: {
+        addHistoryAction(state: IState, historyAction: IHistoryAction): void {
+            this.state.actions.push(historyAction);
+        }
+    }
 }
 
 registerVueComponents();
