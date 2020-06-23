@@ -5,6 +5,7 @@ import { IElement } from "../decalrations/Interfaces";
 import { ElementType } from "../decalrations/enums";
 
 @Component({
+    name: "list-element",
     template: require("./ListElement.html")
 })
 export default class ListElement extends Vue {
@@ -12,6 +13,8 @@ export default class ListElement extends Vue {
     element: IElement;
     @Prop()
     elementType: ElementType;
+
+    public expanded: boolean = false;
 
     onRemoveElement(element: IElement): void {
         this.$emit("remove", element);
