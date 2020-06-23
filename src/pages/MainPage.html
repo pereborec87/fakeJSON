@@ -4,18 +4,10 @@
             <input/>
         </div>
         <div class="source-elements">
-            <div v-for="sourceItem in sourceItems" class="element-row">
-                <div>{{sourceItem.name}}</div>
-                <div>{{sourceItem.id}}</div>
-                <button @click="onAddElement(sourceItem)">+</button>
-            </div>
+            <list-element v-for="sourceItem in sourceItems" @add="onAddElement" :element="sourceItem" elementType="source"/>
         </div>
     </div>
     <div class="elements target-elements">
-        <div v-for="targetItem in targetItems" class="element-row">
-            <div>{{targetItem.name}}</div>
-            <div>{{targetItem.id}}</div>
-            <button @click="onRemoveElement(targetItem)">-</button>
-        </div>
+        <list-element v-for="targetItem in targetItems" @remove="onRemoveElement" :element="targetItem" elementType="target"/>
     </div>
 </div>

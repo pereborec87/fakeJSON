@@ -3,11 +3,13 @@ import Vue from "vue";
 import Axios, { AxiosResponse, AxiosError } from "axios";
 import { IElement, IHistoryAction } from "../decalrations/Interfaces";
 import { ActionTypes } from "../decalrations/enums";
-
-
+import ListElement from "../components/ListElement";
 
 @Component({
-    template: require("./MainPage.html")
+    template: require("./MainPage.html"),
+    components: {
+        "list-element": ListElement
+    }
 })
 export default class MainPage extends Vue {
     public sourceItems: IElement[] = [];
@@ -32,12 +34,7 @@ export default class MainPage extends Vue {
             this.sourceItems.splice(index, 1);
         }
         this.targetItems.push(el);
-        this.$store.commit("addHistoryAction", <IHistoryAction>{
-            name: el.name,
-            id: el.id,
-            actionType: ActionTypes.Add,
-            time: (new Date()).toISOString()
-        });
+        this.addHistoryAction(el, ActionTypes.Add);
     }
 
     public onRemoveElement(el: IElement): void {
@@ -48,11 +45,15 @@ export default class MainPage extends Vue {
             this.targetItems.splice(index, 1);
         }
         this.sourceItems.push(el);
+        this.addHistoryAction(el, ActionTypes.Remove);
+    }
+
+    private addHistoryAction(el: IElement, actionType: ActionTypes): void {
         this.$store.commit("addHistoryAction", <IHistoryAction>{
             name: el.name,
             id: el.id,
-            actionType: ActionTypes.Remove,
-            time: (new Date()).toISOString()
+            actionType: actionType,
+            time: (new Date()).toTimeString()
         });
     }
 }

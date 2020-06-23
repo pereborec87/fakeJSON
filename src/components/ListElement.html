@@ -1,3 +1,6 @@
-<div class="list-element">
-    Элемент списка
+<div class="element-row">
+    <div>{{element.name}}</div>
+    <div>{{element.id}}</div>
+    <button v-if="elementType === 'target'" @click="onRemoveElement(element)">-</button>
+    <button v-else-if="elementType === 'source'" @click="onAddElement(element)">+</button>
 </div>
