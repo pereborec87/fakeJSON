@@ -4,10 +4,6 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports =  {
     mode: "development",
-    watch: true,
-    watchOptions: {
-        aggregateTimeout: 100
-    },
     entry: {
         main: "./src/index.ts"
     },

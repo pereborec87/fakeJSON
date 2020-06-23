@@ -13,11 +13,6 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": false,
     "allowSyntheticDefaultImports": true,
-    "lib": [
-      "es5",
-      "dom",
-      "es2015.promise"
-    ]
   },
   "include": [ "src" ],
   "exclude": [
