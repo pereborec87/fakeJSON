@@ -2,13 +2,33 @@
 
 
 ## Первые шаги для запуска
-1. Установить gulp выполнив команду npm i gulp -g
-2. Установить webpack выполнив команду npm i webpack -g
-3. Выполнить команду npm install
-4. Выполнить команду npm run build
-5. Выполнить команду gulp scss
+1. Установить gulp выполнив команду
+```sh
+npm i gulp -g
+```
+2. Установить webpack выполнив команду
+```sh
+npm i webpack -g
+```
+3. Выполнить команду
+```sh
+npm install
+```
+4. Выполнить команду
+```sh
+npm run build
+```
 
 ## Другие задачи package.json
-1. Инкрементальная сборка js бандла npm run build:dev
-2. Сборка стилей gulp scss
-3. Сборка стилей в watch режиме gulp scss-dev
+1. Инкрементальная сборка js бандла
+```sh
+npm run build:dev
+```
+2. Сборка стилей
+```sh
+gulp scss
+```
+3. Сборка стилей в watch режиме
+```sh
+gulp scss-dev
+```
