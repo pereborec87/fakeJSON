@@ -17,3 +17,12 @@ npm install
 ```sh
 npm run build
 ```
+5. Установить npm пакет http-server
+```sh
+npm i http-server -g
+```
+6. В корне реполитория выполнить команду 
+```sh
+http-server
+```
+В браузере перейти по адресу localhost:<порт на котором запустился сервер> (например, localhost:8081)
