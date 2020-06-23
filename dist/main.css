@@ -23,6 +23,20 @@
       overflow-y: auto;
       flex: 1; }
 
+.list-element-wrapper {
+  display: flex;
+  flex-direction: column; }
+  .list-element-wrapper:hover {
+    background-color: lightblue; }
+  .list-element-wrapper .list-element-row {
+    display: flex;
+    padding: 4px; }
+    .list-element-wrapper .list-element-row div {
+      flex: 1;
+      padding: 0 8px; }
+  .list-element-wrapper .list-element-content {
+    padding-left: 100px; }
+
 html, body {
   height: 100%;
   margin: 0; }

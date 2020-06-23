@@ -15,4 +15,5 @@ export interface IElement {
     id: string;
     name: string;
     items?: IElement[];
+    matchCount?: number;
 }

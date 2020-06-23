@@ -23,4 +23,8 @@ export default class ListElement extends Vue {
     onAddElement(element: IElement): void {
         this.$emit("add", element);
     }
+
+    onClick(): void {
+        this.expanded = !this.expanded;
+    }
 }

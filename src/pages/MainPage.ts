@@ -15,6 +15,8 @@ export default class MainPage extends Vue {
     public sourceItems: IElement[] = [];
     public targetItems: IElement[] = [];
 
+    private searchStr: string = "";
+
     mounted(): void {
         const PUBLIC_API_URI = "https://api.jsonbin.io/b/5ef1285197cb753b4d15df1f/3";
         Axios.get(PUBLIC_API_URI)
@@ -48,6 +50,21 @@ export default class MainPage extends Vue {
         this.addHistoryAction(el, ActionTypes.Remove);
     }
 
+    public onChange($event): void {
+        this.searchStr = $event.target.value;
+        this.sourceItems.forEach((sourceItem: IElement) => {
+            sourceItem.matchCount = 0;
+            let matchCount = sourceItem.name.split(this.searchStr).length - 1;
+            sourceItem.matchCount += matchCount;
+            if (sourceItem.items) {
+                sourceItem.items.forEach((childItem: IElement) => {
+                    let matchCount = sourceItem.name.split(this.searchStr).length - 1;
+                    childItem.matchCount += matchCount;
+                })
+            }
+        });
+    }
+
     private addHistoryAction(el: IElement, actionType: ActionTypes): void {
         this.$store.commit("addHistoryAction", <IHistoryAction>{
             name: el.name,
@@ -55,5 +72,27 @@ export default class MainPage extends Vue {
             actionType: actionType,
             time: (new Date()).toTimeString()
         });
+    }
+    
+    get filteredItems(): IElement[] {
+        if (this.searchStr === "") {
+            return this.sourceItems;
+        } else {
+            let filteredItems = this.sourceItems.filter((sourceItem: IElement) => {
+                sourceItem.matchCount = 0;
+                sourceItem.name.indexOf(this.searchStr) > -1 && sourceItem.matchCount++;
+                if (sourceItem.items) {
+                    sourceItem.items.forEach((childItem: IElement) => {
+                        childItem.name.indexOf(this.searchStr) > -1 && sourceItem.matchCount++;
+                    });
+                }
+
+                return sourceItem.matchCount > 0;
+            });
+            filteredItems.sort((item1: IElement, item2: IElement) => {
+                return item1.matchCount > item2.matchCount ? -1 : 1;
+            });
+            return filteredItems;
+        }
     }
 }
